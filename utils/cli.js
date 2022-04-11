@@ -2,17 +2,6 @@ import meow from 'meow';
 import meowHelp from 'cli-meow-help';
 
 const flags = {
-	clear: {
-		type: `boolean`,
-		default: true,
-		alias: `c`,
-		desc: `Clear the console`
-	},
-	noClear: {
-		type: `boolean`,
-		default: false,
-		desc: `Don't clear the console`
-	},
 	debug: {
 		type: `boolean`,
 		default: false,

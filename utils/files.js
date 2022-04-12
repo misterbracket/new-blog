@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
 export const delDirPromise = dirPath =>
 	new Promise((resolve, reject) => {
@@ -31,9 +32,8 @@ export const writeFilePromise = (fileLocation, fileContent) =>
 		});
 	});
 
-// Somewhat counter-intuitively, `fs.readFile` works relative to the current
-// working directory (if the user is in their own project, it's relative to
-// their project). This is unlike `require()` calls, which are always relative
-// to the code's directory.
-export const readFilePromiseRelative = fileLocation =>
-	readFilePromise(path.resolve(fileLocation));
+export const readFilePromiseRelative = fileLocation => {
+	const __filename = fileURLToPath(import.meta.url);
+	const __dirname = path.dirname(__filename);
+	return readFilePromise(path.join(__dirname, fileLocation));
+};

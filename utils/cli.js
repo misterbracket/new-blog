@@ -2,12 +2,6 @@ import meow from 'meow';
 import meowHelp from 'cli-meow-help';
 
 const flags = {
-	debug: {
-		type: `boolean`,
-		default: false,
-		alias: `d`,
-		desc: `Print debug info`
-	},
 	version: {
 		type: `boolean`,
 		alias: `v`,

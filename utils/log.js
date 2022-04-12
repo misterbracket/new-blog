@@ -1,12 +1,16 @@
 import alert from 'cli-alerts';
 
-export default info => {
+export const logError = msg => {
 	alert({
-		type: `warning`,
-		name: `DEBUG LOG`,
-		msg: ``
+		type: `error`,
+		name: `ERROR`,
+		msg: msg
 	});
-
-	console.log(info);
-	console.log();
+};
+export const logSuccess = msg => {
+	alert({
+		type: `success`,
+		name: `Success`,
+		msg: msg
+	});
 };

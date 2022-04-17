@@ -1,7 +1,7 @@
 {
 	"name": "@maxklammer/new-blog",
 	"description": "Creates a new MDX file and frontmatter header for my blog",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"license": "UNLICENSED",
 	"type": "module",
 	"bin": {
